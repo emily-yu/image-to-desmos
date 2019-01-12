@@ -26,6 +26,7 @@ def transitions(neighbours):
     n = neighbours + neighbours[0:1]      # P2, P3, ... , P8, P9, P2
     return sum( (n1, n2) == (0, 1) for n1, n2 in zip(n, n[1:]) )  # (P2,P3), (P3,P4), ... , (P8,P9), (P9,P2)
 
+coords = []
 def zhangSuen(image):
     "the Zhang-Suen Thinning Algorithm"
     Image_Thinned = image.copy()  # deepcopy to protect the original image
@@ -44,6 +45,9 @@ def zhangSuen(image):
                     P2 * P4 * P6 == 0  and    # Condition 3   
                     P4 * P6 * P8 == 0):         # Condition 4
                     changing1.append((x,y))
+
+        # print('lol')
+        # print(changing1)
         for x, y in changing1: 
             Image_Thinned[x][y] = 0
         # Step 2
@@ -55,15 +59,32 @@ def zhangSuen(image):
                     2 <= sum(n) <= 6  and       # Condition 1
                     transitions(n) == 1 and      # Condition 2
                     P2 * P4 * P8 == 0 and       # Condition 3
-                    P2 * P6 * P8 == 0):            # Condition 4
-                    changing2.append((x,y))    
+                    P2 * P6 * P8 == 0):            # Condition 4: when all == 0, means all around are black -> reduced to the fullest
+                    changing2.append((x,y))
+                    coords.append((x, y))   
         for x, y in changing2: 
-            Image_Thinned[x][y] = 0
+            Image_Thinned[x][y] = 0 # the 0 pixels are the white ones
+
     return Image_Thinned
  
 
 "Apply the algorithm on images"
 BW_Skeleton = zhangSuen(BW_Original)
+
+# -------------------------------------------------------------
+print(type(BW_Skeleton))
+print('yahaoalalallalalao')
+# coords = BW_Skeleton.tolist()
+print(coords) # array containing coordinates of points
+
+set_coords = set(coords)
+
+# (31, 45) search for...
+# x: 31 +- 1, 45
+# y: 31, 45 +- 1
+# top diagonals: (30 - 1, 45 + 1) (30 + 1, 45 + 1)
+# bottom diagonals: (30 - 1, 45 - 1), (30 + 1, 45 - 1)
+
 # BW_Skeleton = BW_Original
 "Display the results"
 # fig, ax = plt.subplots(1, 2)
@@ -86,7 +107,7 @@ ax.axis('off')
 
 # Display the image.
 ax.imshow(BW_Skeleton, cmap='gray')
-
+print(type(ax))
 # plt.show()
 
 # plt.subplot(122),plt.imshow(edges,cmap = 'gray')
