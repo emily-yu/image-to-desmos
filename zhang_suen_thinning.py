@@ -45,22 +45,24 @@ def zhangSuen(image):
                     P2 * P4 * P6 == 0  and    # Condition 3   
                     P4 * P6 * P8 == 0):         # Condition 4
                     changing1.append((x,y))
+                    coords.append((x, y))
 
         # print('lol')
         # print(changing1)
         for x, y in changing1: 
             Image_Thinned[x][y] = 0
+
         # Step 2
         changing2 = []
         for x in range(1, rows - 1):
             for y in range(1, columns - 1):
                 P2,P3,P4,P5,P6,P7,P8,P9 = n = neighbours(x, y, Image_Thinned)
-                if (Image_Thinned[x][y] == 1   and        # Condition 0
-                    2 <= sum(n) <= 6  and       # Condition 1
-                    transitions(n) == 1 and      # Condition 2
-                    P2 * P4 * P8 == 0 and       # Condition 3
-                    P2 * P6 * P8 == 0):            # Condition 4: when all == 0, means all around are black -> reduced to the fullest
-                    changing2.append((x,y))
+                # 1 is black, 0 is white
+                if (Image_Thinned[x][y] == 1   and # Condition 0 - is black pixel
+                    2 <= sum(n) <= 6  and  # Condition 1 - 2 to 6 black neighbor
+                    transitions(n) == 1 and  # Condition 2 - only 1 neighbor to transition to *******
+                    P2 * P4 * P8 == 0 and       # Condition 3 - TOP HALF... either 2, 4, or 8 is white
+                    P2 * P6 * P8 == 0):            # Condition 4: BOTTOM HALF... either 2, 6, or 8 is white
                     coords.append((x, y))   
         for x, y in changing2: 
             Image_Thinned[x][y] = 0 # the 0 pixels are the white ones
@@ -79,22 +81,6 @@ print(coords) # array containing coordinates of points
 
 set_coords = set(coords)
 
-# (31, 45) search for...
-# x: 31 +- 1, 45
-# y: 31, 45 +- 1
-# top diagonals: (30 - 1, 45 + 1) (30 + 1, 45 + 1)
-# bottom diagonals: (30 - 1, 45 - 1), (30 + 1, 45 - 1)
-
-# BW_Skeleton = BW_Original
-"Display the results"
-# fig, ax = plt.subplots(1, 2)
-# ax1, ax2 = ax.ravel()
-# ax1.imshow(BW_Original, cmap=plt.cm.gray)
-# ax1.set_title('Original binary image')
-# ax1.axis('off')
-# ax2.imshow(BW_Skeleton, cmap=plt.cm.gray)
-# ax2.set_title('Skeleton of the image')
-# ax2.axis('off')
 height, width = BW_Skeleton.shape
 dpi = 80
 # What size does the figure need to be in inches to fit the image?
@@ -108,18 +94,5 @@ ax.axis('off')
 # Display the image.
 ax.imshow(BW_Skeleton, cmap='gray')
 print(type(ax))
-# plt.show()
 
-# plt.subplot(122),plt.imshow(edges,cmap = 'gray')
-# plt.title(''), plt.xticks([]), plt.yticks([])
-
-# fig, ax = plt.subplots(1)
-# # plt.figure(figsize=(12, 9))
-# for ind in df.index:
-#     ax.scatter(df.loc[ind, 'wt'], df.loc[ind, 'mpg'], label=ind)
-# ax.legend(bbox_to_anchor=(1.05, 1), loc=2)
-# fig.tight_layout()
-# plt.show()
-# fig.savefig('lol3.jpg')
-# plt.show()
 fig.savefig('asdf.png')

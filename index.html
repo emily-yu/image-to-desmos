@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style>
+#calculator {
+	width: 100%;
+    margin: 0 auto;
+    height: 500px;
+}
+</style>
+<div id="calculator"></div>
+<span id = 'text'></span>
+</body>
+
+<script src="https://www.desmos.com/api/v1.2/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<script>
+  var elt = document.getElementById('calculator');
+  var calculator = Desmos.GraphingCalculator(elt);
+  var data = ['(3, 4)', '(6, 7)']
+  for (let x of data) {
+	randid = Math.random().toString(36).substring(7)
+	calculator.setExpression({id:randid, latex: x})
+  }
+</script>
+
+<script type="text/javascript" src="http://localhost:5000/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+function log(html) {
+	text = document.getElementById('span')
+    text.innerHTML += html + '<br>';
+}
+
+var socket = new io.Socket('localhost', { port: 5000 });
+socket.on('connect', function() {
+    log('connect');
+});
+socket.on('message', function(data) {
+    log('message: ' + data);
+});
+socket.on('disconnect', function() {
+    log('disconnect');
+});
+socket.connect();
+
+</script>
+</html>
