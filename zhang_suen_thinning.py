@@ -66,13 +66,39 @@ def zhangSuen(image):
 BW_Skeleton = zhangSuen(BW_Original)
 # BW_Skeleton = BW_Original
 "Display the results"
-fig, ax = plt.subplots(1, 2)
-ax1, ax2 = ax.ravel()
-ax1.imshow(BW_Original, cmap=plt.cm.gray)
-ax1.set_title('Original binary image')
-ax1.axis('off')
-ax2.imshow(BW_Skeleton, cmap=plt.cm.gray)
-ax2.set_title('Skeleton of the image')
-ax2.axis('off')
+# fig, ax = plt.subplots(1, 2)
+# ax1, ax2 = ax.ravel()
+# ax1.imshow(BW_Original, cmap=plt.cm.gray)
+# ax1.set_title('Original binary image')
+# ax1.axis('off')
+# ax2.imshow(BW_Skeleton, cmap=plt.cm.gray)
+# ax2.set_title('Skeleton of the image')
+# ax2.axis('off')
+height, width = BW_Skeleton.shape
+dpi = 80
+# What size does the figure need to be in inches to fit the image?
+figsize = width / float(dpi), height / float(dpi)
+
+# Create a figure of the right size with one axes that takes up the full figure
+fig = plt.figure(figsize=figsize)
+ax = fig.add_axes([0, 0, 1, 1])
+ax.axis('off')
+
+# Display the image.
+ax.imshow(BW_Skeleton, cmap='gray')
+
+# plt.show()
+
+# plt.subplot(122),plt.imshow(edges,cmap = 'gray')
+# plt.title(''), plt.xticks([]), plt.yticks([])
+
+# fig, ax = plt.subplots(1)
+# # plt.figure(figsize=(12, 9))
+# for ind in df.index:
+#     ax.scatter(df.loc[ind, 'wt'], df.loc[ind, 'mpg'], label=ind)
+# ax.legend(bbox_to_anchor=(1.05, 1), loc=2)
+# fig.tight_layout()
+# plt.show()
+# fig.savefig('lol3.jpg')
 # plt.show()
 fig.savefig('asdf.png')
