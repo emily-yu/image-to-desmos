@@ -11,36 +11,38 @@ import skimage.io as io
 from PIL import Image
 
 # process: img_function.py, zhang_suen_thinning.py
-coords = []
+# coords = []
+
+coords = ''
 
 # turn main parts of images into blobs
 def blobify(file_path, new_file_name):
-	dpi = 80
-	# im_data = img
-	im_data = cv2.imread(file_path,0)
-	edges = cv2.Canny(im_data,100,200)
-	edges = cv2.dilate(edges, None, iterations=5)
-	edges = cv2.erode(edges, None, iterations=4)
-	edges = cv2.bitwise_not(edges)
+    dpi = 80
+    # im_data = img
+    im_data = cv2.imread(file_path,0)
+    edges = cv2.Canny(im_data,100,200)
+    edges = cv2.dilate(edges, None, iterations=5)
+    edges = cv2.erode(edges, None, iterations=4)
+    edges = cv2.bitwise_not(edges)
 
-	height, width = im_data.shape
+    height, width = im_data.shape
 
-	# What size does the figure need to be in inches to fit the image?
-	figsize = width / float(dpi), height / float(dpi)
+    # What size does the figure need to be in inches to fit the image?
+    figsize = width / float(dpi), height / float(dpi)
 
-	# Create a figure of the right size with one axes that takes up the full figure
-	fig = plt.figure(figsize=figsize)
-	ax = fig.add_axes([0, 0, 1, 1])
+    # Create a figure of the right size with one axes that takes up the full figure
+    fig = plt.figure(figsize=figsize)
+    ax = fig.add_axes([0, 0, 1, 1])
 
-	# Hide spines, ticks, etc.
-	ax.axis('off')
+    # Hide spines, ticks, etc.
+    ax.axis('off')
 
-	# Display the image.
-	ax.imshow(edges, cmap='gray')
+    # Display the image.
+    ax.imshow(edges, cmap='gray')
 
-	fig.savefig(new_file_name)
-	#----------------------END MAKING THE EDGES LOOK NICER
-	# print('done')
+    fig.savefig(new_file_name)
+    #----------------------END MAKING THE EDGES LOOK NICER
+    # print('done')
 
 def neighbours(x,y,image):
     "Return 8-neighbours of image point P1(x,y), in a clockwise order"
@@ -56,7 +58,10 @@ def transitions(neighbours):
 
 def zhangSuen(image):
     "the Zhang-Suen Thinning Algorithm"
+    global coords
+
     Image_Thinned = image.copy()  # deepcopy to protect the original image
+
     changing1 = changing2 = 1        #  the points to be removed (set as 0)
     while changing1 or changing2:   #  iterates until no further changes occur in the image
         # Step 1
@@ -72,7 +77,7 @@ def zhangSuen(image):
                     P2 * P4 * P6 == 0  and    # Condition 3   
                     P4 * P6 * P8 == 0):         # Condition 4
                     changing1.append((x,y))
-                    coords.append((x, y))
+                    coords = coords + '(' + str(x) + ', ' + str(y) + ');'
 
         # print('lol')
         # print(changing1)
@@ -90,29 +95,32 @@ def zhangSuen(image):
                     transitions(n) == 1 and  # Condition 2 - only 1 neighbor to transition to *******
                     P2 * P4 * P8 == 0 and       # Condition 3 - TOP HALF... either 2, 4, or 8 is white
                     P2 * P6 * P8 == 0):            # Condition 4: BOTTOM HALF... either 2, 6, or 8 is white
-                    coords.append((x, y))   
+                    coords = coords + '(' + str(x) + ', ' + str(y) + ');'
         for x, y in changing2: 
             Image_Thinned[x][y] = 0 # the 0 pixels are the white ones
 
     return Image_Thinned
 
 def execute_zhang_suen():
-	blobify('leaf-identification.jpg', 'lol4.jpg')
+    global coords
+    blobify('leaf-identification.jpg', 'lol4.jpg')
 
-	Img_Original =  io.imread( 'lol4.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion
+    from PIL import Image
+    img = Image.open('lol4.jpg')
+    new_img = img.resize((100,100))
+    new_img.save("lol5.jpg", "JPEG", optimize=True)
 
-	"Convert gray images to binary images using Otsu's method"
-	from skimage.filter import threshold_otsu
-	Otsu_Threshold = threshold_otsu(Img_Original)   
-	BW_Original = Img_Original < Otsu_Threshold    # must set object region as 1, background region as 0 !
+    Img_Original =  io.imread( 'lol5.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion
 
-	"Apply the algorithm on images"
-	BW_Skeleton = zhangSuen(BW_Original)
+    "Convert gray images to binary images using Otsu's method"
+    from skimage.filter import threshold_otsu
+    Otsu_Threshold = threshold_otsu(Img_Original)   
+    BW_Original = Img_Original < Otsu_Threshold    # must set object region as 1, background region as 0 !
 
-	# -------------------------------------------------------------
+    "Apply the algorithm on images"
+    BW_Skeleton = zhangSuen(BW_Original)
 
-	str_coord = str(coords)
-	return str_coord
+    return coords
 
 # # MAIN COMMAND
 # print(execute_zhang_suen())

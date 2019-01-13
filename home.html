@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style>
+#calculator {
+	width: 100%;
+    margin: 0 auto;
+    height: 500px;
+}
+</style>
+<div id="calculator"></div>
+<span id = 'text'></span>
+<button id = 'exec'></button>
+</body>
+
+<script src="https://www.desmos.com/api/v1.2/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+<script>
+var elt = document.getElementById('calculator');
+var calculator = Desmos.GraphingCalculator(elt);
+
+let button = document.getElementById('exec')
+button.addEventListener('click', () => {
+  $.get(
+      "http://localhost:5000/new_image",
+      {},
+      function(data) {
+         console.log(data.split(';'))
+         for (let x of data.split(';')) {
+            randid = Math.random().toString(36).substring(7)
+            calculator.setExpression({id:randid, latex: x})
+         }
+      }
+  );
+})
+</script>
+</html>
