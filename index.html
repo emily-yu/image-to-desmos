@@ -26,25 +26,18 @@
   }
 </script>
 
-<script type="text/javascript" src="http://localhost:5000/socket.io/socket.io.js"></script>
-<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+<script>
+  $(document).ready(function() {
+    var connection = new WebSocket('ws://169.231.167.2:23456');
 
-function log(html) {
-	text = document.getElementById('span')
-    text.innerHTML += html + '<br>';
-}
-
-var socket = new io.Socket('localhost', { port: 5000 });
-socket.on('connect', function() {
-    log('connect');
+    $("img").on("click", function(event) {
+      var x = event.pageX - this.offsetLeft;
+      var y = event.pageY - this.offsetTop;
+      const data = [x/this.width, y/this.height]
+      connection.send(JSON.stringify(data))
+    });
 });
-socket.on('message', function(data) {
-    log('message: ' + data);
-});
-socket.on('disconnect', function() {
-    log('disconnect');
-});
-socket.connect();
 
 </script>
 </html>

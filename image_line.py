@@ -1,18 +1,46 @@
+# import cv2;
+# import numpy as np;
+from PIL import Image
+ 
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 import matplotlib
 import matplotlib.pyplot as plt
 import skimage.io as io
 from PIL import Image
-"load image data"
-img = Image.open('subpixel5.png')
-file_out = "test1.png"
-img.save(file_out)
 
-Img_Original =  io.imread( 'test1.png', as_grey=True)      # Gray image, rgb images need pre-conversion
+# process: img_function.py, zhang_suen_thinning.py
+coords = []
 
-"Convert gray images to binary images using Otsu's method"
-from skimage.filter import threshold_otsu
-Otsu_Threshold = threshold_otsu(Img_Original)   
-BW_Original = Img_Original < Otsu_Threshold    # must set object region as 1, background region as 0 !
+# turn main parts of images into blobs
+def blobify(file_path, new_file_name):
+	dpi = 80
+	# im_data = img
+	im_data = cv2.imread(file_path,0)
+	edges = cv2.Canny(im_data,100,200)
+	edges = cv2.dilate(edges, None, iterations=5)
+	edges = cv2.erode(edges, None, iterations=4)
+	edges = cv2.bitwise_not(edges)
+
+	height, width = im_data.shape
+
+	# What size does the figure need to be in inches to fit the image?
+	figsize = width / float(dpi), height / float(dpi)
+
+	# Create a figure of the right size with one axes that takes up the full figure
+	fig = plt.figure(figsize=figsize)
+	ax = fig.add_axes([0, 0, 1, 1])
+
+	# Hide spines, ticks, etc.
+	ax.axis('off')
+
+	# Display the image.
+	ax.imshow(edges, cmap='gray')
+
+	fig.savefig(new_file_name)
+	#----------------------END MAKING THE EDGES LOOK NICER
+	# print('done')
 
 def neighbours(x,y,image):
     "Return 8-neighbours of image point P1(x,y), in a clockwise order"
@@ -26,7 +54,6 @@ def transitions(neighbours):
     n = neighbours + neighbours[0:1]      # P2, P3, ... , P8, P9, P2
     return sum( (n1, n2) == (0, 1) for n1, n2 in zip(n, n[1:]) )  # (P2,P3), (P3,P4), ... , (P8,P9), (P9,P2)
 
-coords = []
 def zhangSuen(image):
     "the Zhang-Suen Thinning Algorithm"
     Image_Thinned = image.copy()  # deepcopy to protect the original image
@@ -34,7 +61,7 @@ def zhangSuen(image):
     while changing1 or changing2:   #  iterates until no further changes occur in the image
         # Step 1
         changing1 = []
-        print(Image_Thinned.shape)
+        # print(Image_Thinned.shape)
         rows, columns = Image_Thinned.shape               # x for rows, y for columns
         for x in range(1, rows - 1):                     # No. of  rows
             for y in range(1, columns - 1):            # No. of columns
@@ -68,32 +95,26 @@ def zhangSuen(image):
             Image_Thinned[x][y] = 0 # the 0 pixels are the white ones
 
     return Image_Thinned
- 
 
-"Apply the algorithm on images"
-BW_Skeleton = zhangSuen(BW_Original)
+def execute_zhang_suen():
+	blobify('leaf-identification.jpg', 'lol4.jpg')
 
-# -------------------------------------------------------------
-print(type(BW_Skeleton))
-print('yahaoalalallalalao')
-# coords = BW_Skeleton.tolist()
-print(coords) # array containing coordinates of points
+	Img_Original =  io.imread( 'lol4.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion
 
-str_coord = str(coords)
-print(str_coord)
+	"Convert gray images to binary images using Otsu's method"
+	from skimage.filter import threshold_otsu
+	Otsu_Threshold = threshold_otsu(Img_Original)   
+	BW_Original = Img_Original < Otsu_Threshold    # must set object region as 1, background region as 0 !
 
-height, width = BW_Skeleton.shape
-dpi = 80
-# What size does the figure need to be in inches to fit the image?
-figsize = width / float(dpi), height / float(dpi)
+	"Apply the algorithm on images"
+	BW_Skeleton = zhangSuen(BW_Original)
 
-# Create a figure of the right size with one axes that takes up the full figure
-fig = plt.figure(figsize=figsize)
-ax = fig.add_axes([0, 0, 1, 1])
-ax.axis('off')
+	# -------------------------------------------------------------
 
-# Display the image.
-ax.imshow(BW_Skeleton, cmap='gray')
-print(type(ax))
+	str_coord = str(coords)
+	return str_coord
 
-fig.savefig('asddddf.png')
+# # MAIN COMMAND
+# print(execute_zhang_suen())
+
+
