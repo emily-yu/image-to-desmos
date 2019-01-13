@@ -101,13 +101,12 @@ def zhangSuen(image):
 
     return Image_Thinned
 
-def execute_zhang_suen():
+def execute_zhang_suen(file):
     global coords
-    blobify('leaf-identification.jpg', 'lol4.jpg')
+    blobify(file, 'lol4.jpg')
 
-    from PIL import Image
     img = Image.open('lol4.jpg')
-    new_img = img.resize((100,100))
+    new_img = img.resize((150,150))
     new_img.save("lol5.jpg", "JPEG", optimize=True)
 
     Img_Original =  io.imread( 'lol5.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion

@@ -13,12 +13,33 @@
 </style>
 <div id="calculator"></div>
 <span id = 'text'></span>
-<button id = 'exec'></button>
+<br>
+<div id="outer">
+    
+<div id="mybutton">
+<input type="file" id="myfile">
+Choose a file
+</div>
+
+<input type="text" id="mytext">
+<br>
+<button id = 'exec'>execute</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+
+<script>
+$('#myfile').change(function() {
+    $('#mytext').val($(this).val());
+});
+
+</script>
+
+
+
 </body>
 
 <script src="https://www.desmos.com/api/v1.2/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
 <script>
 var elt = document.getElementById('calculator');
 var calculator = Desmos.GraphingCalculator(elt);
@@ -27,7 +48,7 @@ let button = document.getElementById('exec')
 button.addEventListener('click', () => {
   $.get(
       "http://localhost:5000/new_image",
-      {},
+      {'file' : document.getElementById('myfile').files[0].name},
       function(data) {
          console.log(data.split(';'))
          for (let x of data.split(';')) {
@@ -38,4 +59,5 @@ button.addEventListener('click', () => {
   );
 })
 </script>
+
 </html>

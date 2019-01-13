@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1589B8221EACB1A001FDD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1589B8121EACB1A001FDD2C /* AppDelegate.swift */; };
+		A1589B8421EACB1A001FDD2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1589B8321EACB1A001FDD2C /* ViewController.swift */; };
+		A1589B8721EACB1A001FDD2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1589B8521EACB1A001FDD2C /* Main.storyboard */; };
+		A1589B8921EACB1A001FDD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1589B8821EACB1A001FDD2C /* Assets.xcassets */; };
+		A1589B8C21EACB1A001FDD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1589B8A21EACB1A001FDD2C /* LaunchScreen.storyboard */; };
+		A1589B9721EACB1A001FDD2C /* image_to_desmosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1589B9621EACB1A001FDD2C /* image_to_desmosTests.swift */; };
+		A1589BA221EACB1A001FDD2C /* image_to_desmosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1589BA121EACB1A001FDD2C /* image_to_desmosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1589B9321EACB1A001FDD2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1589B7621EACB1A001FDD2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1589B7D21EACB1A001FDD2C;
+			remoteInfo = "image-to-desmos";
+		};
+		A1589B9E21EACB1A001FDD2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1589B7621EACB1A001FDD2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1589B7D21EACB1A001FDD2C;
+			remoteInfo = "image-to-desmos";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1589B7E21EACB1A001FDD2C /* image-to-desmos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "image-to-desmos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1589B8121EACB1A001FDD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1589B8321EACB1A001FDD2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1589B8621EACB1A001FDD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1589B8821EACB1A001FDD2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1589B8B21EACB1A001FDD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1589B8D21EACB1A001FDD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1589B9221EACB1A001FDD2C /* image-to-desmosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "image-to-desmosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1589B9621EACB1A001FDD2C /* image_to_desmosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_to_desmosTests.swift; sourceTree = "<group>"; };
+		A1589B9821EACB1A001FDD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1589B9D21EACB1A001FDD2C /* image-to-desmosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "image-to-desmosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1589BA121EACB1A001FDD2C /* image_to_desmosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image_to_desmosUITests.swift; sourceTree = "<group>"; };
+		A1589BA321EACB1A001FDD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1589B7B21EACB1A001FDD2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B8F21EACB1A001FDD2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B9A21EACB1A001FDD2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1589B7521EACB1A001FDD2C = {
+			isa = PBXGroup;
+			children = (
+				A1589B8021EACB1A001FDD2C /* image-to-desmos */,
+				A1589B9521EACB1A001FDD2C /* image-to-desmosTests */,
+				A1589BA021EACB1A001FDD2C /* image-to-desmosUITests */,
+				A1589B7F21EACB1A001FDD2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1589B7F21EACB1A001FDD2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1589B7E21EACB1A001FDD2C /* image-to-desmos.app */,
+				A1589B9221EACB1A001FDD2C /* image-to-desmosTests.xctest */,
+				A1589B9D21EACB1A001FDD2C /* image-to-desmosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1589B8021EACB1A001FDD2C /* image-to-desmos */ = {
+			isa = PBXGroup;
+			children = (
+				A1589B8121EACB1A001FDD2C /* AppDelegate.swift */,
+				A1589B8321EACB1A001FDD2C /* ViewController.swift */,
+				A1589B8521EACB1A001FDD2C /* Main.storyboard */,
+				A1589B8821EACB1A001FDD2C /* Assets.xcassets */,
+				A1589B8A21EACB1A001FDD2C /* LaunchScreen.storyboard */,
+				A1589B8D21EACB1A001FDD2C /* Info.plist */,
+			);
+			path = "image-to-desmos";
+			sourceTree = "<group>";
+		};
+		A1589B9521EACB1A001FDD2C /* image-to-desmosTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1589B9621EACB1A001FDD2C /* image_to_desmosTests.swift */,
+				A1589B9821EACB1A001FDD2C /* Info.plist */,
+			);
+			path = "image-to-desmosTests";
+			sourceTree = "<group>";
+		};
+		A1589BA021EACB1A001FDD2C /* image-to-desmosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A1589BA121EACB1A001FDD2C /* image_to_desmosUITests.swift */,
+				A1589BA321EACB1A001FDD2C /* Info.plist */,
+			);
+			path = "image-to-desmosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1589B7D21EACB1A001FDD2C /* image-to-desmos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1589BA621EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmos" */;
+			buildPhases = (
+				A1589B7A21EACB1A001FDD2C /* Sources */,
+				A1589B7B21EACB1A001FDD2C /* Frameworks */,
+				A1589B7C21EACB1A001FDD2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "image-to-desmos";
+			productName = "image-to-desmos";
+			productReference = A1589B7E21EACB1A001FDD2C /* image-to-desmos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1589B9121EACB1A001FDD2C /* image-to-desmosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1589BA921EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmosTests" */;
+			buildPhases = (
+				A1589B8E21EACB1A001FDD2C /* Sources */,
+				A1589B8F21EACB1A001FDD2C /* Frameworks */,
+				A1589B9021EACB1A001FDD2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1589B9421EACB1A001FDD2C /* PBXTargetDependency */,
+			);
+			name = "image-to-desmosTests";
+			productName = "image-to-desmosTests";
+			productReference = A1589B9221EACB1A001FDD2C /* image-to-desmosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A1589B9C21EACB1A001FDD2C /* image-to-desmosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1589BAC21EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmosUITests" */;
+			buildPhases = (
+				A1589B9921EACB1A001FDD2C /* Sources */,
+				A1589B9A21EACB1A001FDD2C /* Frameworks */,
+				A1589B9B21EACB1A001FDD2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1589B9F21EACB1A001FDD2C /* PBXTargetDependency */,
+			);
+			name = "image-to-desmosUITests";
+			productName = "image-to-desmosUITests";
+			productReference = A1589B9D21EACB1A001FDD2C /* image-to-desmosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1589B7621EACB1A001FDD2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Emily;
+				TargetAttributes = {
+					A1589B7D21EACB1A001FDD2C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					A1589B9121EACB1A001FDD2C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A1589B7D21EACB1A001FDD2C;
+					};
+					A1589B9C21EACB1A001FDD2C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A1589B7D21EACB1A001FDD2C;
+					};
+				};
+			};
+			buildConfigurationList = A1589B7921EACB1A001FDD2C /* Build configuration list for PBXProject "image-to-desmos" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1589B7521EACB1A001FDD2C;
+			productRefGroup = A1589B7F21EACB1A001FDD2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1589B7D21EACB1A001FDD2C /* image-to-desmos */,
+				A1589B9121EACB1A001FDD2C /* image-to-desmosTests */,
+				A1589B9C21EACB1A001FDD2C /* image-to-desmosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1589B7C21EACB1A001FDD2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1589B8C21EACB1A001FDD2C /* LaunchScreen.storyboard in Resources */,
+				A1589B8921EACB1A001FDD2C /* Assets.xcassets in Resources */,
+				A1589B8721EACB1A001FDD2C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B9021EACB1A001FDD2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B9B21EACB1A001FDD2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1589B7A21EACB1A001FDD2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1589B8421EACB1A001FDD2C /* ViewController.swift in Sources */,
+				A1589B8221EACB1A001FDD2C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B8E21EACB1A001FDD2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1589B9721EACB1A001FDD2C /* image_to_desmosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1589B9921EACB1A001FDD2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1589BA221EACB1A001FDD2C /* image_to_desmosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1589B9421EACB1A001FDD2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1589B7D21EACB1A001FDD2C /* image-to-desmos */;
+			targetProxy = A1589B9321EACB1A001FDD2C /* PBXContainerItemProxy */;
+		};
+		A1589B9F21EACB1A001FDD2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1589B7D21EACB1A001FDD2C /* image-to-desmos */;
+			targetProxy = A1589B9E21EACB1A001FDD2C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1589B8521EACB1A001FDD2C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1589B8621EACB1A001FDD2C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1589B8A21EACB1A001FDD2C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1589B8B21EACB1A001FDD2C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1589BA421EACB1A001FDD2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1589BA521EACB1A001FDD2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1589BA721EACB1A001FDD2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmos/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1589BA821EACB1A001FDD2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmos/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1589BAA21EACB1A001FDD2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/image-to-desmos.app/image-to-desmos";
+			};
+			name = Debug;
+		};
+		A1589BAB21EACB1A001FDD2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/image-to-desmos.app/image-to-desmos";
+			};
+			name = Release;
+		};
+		A1589BAD21EACB1A001FDD2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "image-to-desmos";
+			};
+			name = Debug;
+		};
+		A1589BAE21EACB1A001FDD2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSYD3ZBRT6;
+				INFOPLIST_FILE = "image-to-desmosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eyu.image-to-desmosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "image-to-desmos";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1589B7921EACB1A001FDD2C /* Build configuration list for PBXProject "image-to-desmos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1589BA421EACB1A001FDD2C /* Debug */,
+				A1589BA521EACB1A001FDD2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1589BA621EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1589BA721EACB1A001FDD2C /* Debug */,
+				A1589BA821EACB1A001FDD2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1589BA921EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1589BAA21EACB1A001FDD2C /* Debug */,
+				A1589BAB21EACB1A001FDD2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1589BAC21EACB1A001FDD2C /* Build configuration list for PBXNativeTarget "image-to-desmosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1589BAD21EACB1A001FDD2C /* Debug */,
+				A1589BAE21EACB1A001FDD2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1589B7621EACB1A001FDD2C /* Project object */;
+}
