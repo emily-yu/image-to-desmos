@@ -1,3 +1,6 @@
+# Original Zhang-Suen Algorithm
+# -- this file was used to experiment with applying the algorithm -- 
+
 import matplotlib
 import matplotlib.pyplot as plt
 import skimage.io as io

@@ -1,7 +1,4 @@
-# import cv2;
-# import numpy as np;
 from PIL import Image
- 
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -10,15 +7,12 @@ import matplotlib.pyplot as plt
 import skimage.io as io
 from PIL import Image
 
-# process: img_function.py, zhang_suen_thinning.py
-# coords = []
-
 coords = ''
 
-# turn main parts of images into blobs
+# Makes edges of the image smooth
 def blobify(file_path, new_file_name):
     dpi = 80
-    # im_data = img
+
     im_data = cv2.imread(file_path,0)
     edges = cv2.Canny(im_data,100,200)
     edges = cv2.dilate(edges, None, iterations=5)
@@ -44,6 +38,7 @@ def blobify(file_path, new_file_name):
     #----------------------END MAKING THE EDGES LOOK NICER
     # print('done')
 
+# Zhang-Suen Algorithm
 def neighbours(x,y,image):
     "Return 8-neighbours of image point P1(x,y), in a clockwise order"
     img = image
@@ -79,8 +74,6 @@ def zhangSuen(image):
                     changing1.append((x,y))
                     coords = coords + '(' + str(x) + ', ' + str(y) + ');'
 
-        # print('lol')
-        # print(changing1)
         for x, y in changing1: 
             Image_Thinned[x][y] = 0
 
@@ -101,15 +94,16 @@ def zhangSuen(image):
 
     return Image_Thinned
 
+# Execute Functions
 def execute_zhang_suen(file):
     global coords
-    blobify(file, 'lol4.jpg')
+    blobify(file, 'results/lol4.jpg')
 
-    img = Image.open('lol4.jpg')
+    img = Image.open('results/lol4.jpg')
     new_img = img.resize((150,150))
-    new_img.save("lol5.jpg", "JPEG", optimize=True)
+    new_img.save("results/lol5.jpg", "JPEG", optimize=True)
 
-    Img_Original =  io.imread( 'lol5.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion
+    Img_Original =  io.imread( 'results/lol5.jpg', as_grey=True)      # Gray image, rgb images need pre-conversion
 
     "Convert gray images to binary images using Otsu's method"
     from skimage.filter import threshold_otsu
@@ -122,6 +116,6 @@ def execute_zhang_suen(file):
     return coords
 
 # # MAIN COMMAND
-# print(execute_zhang_suen())
+print(execute_zhang_suen('tests/leaf-identification.jpg'))
 
 

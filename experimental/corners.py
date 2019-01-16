@@ -1,3 +1,6 @@
+# Harris Corner Detection
+# -- not currently used by program -- 
+
 import cv2
 import numpy as np
 
