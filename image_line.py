@@ -115,7 +115,7 @@ def execute_zhang_suen(file):
 
     return coords
 
-# # MAIN COMMAND
-print(execute_zhang_suen('tests/leaf-identification.jpg'))
+# To run the algorithm: 
+# print(execute_zhang_suen('tests/leaf-identification.jpg'))
 
 
